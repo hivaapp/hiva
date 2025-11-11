@@ -130,32 +130,52 @@ function initializeFAQ() {
 function initializeMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMobileMenu() {
+        const isActive = mobileMenu.classList.toggle('active');
         
-        // Animate hamburger icon
-        const spans = this.querySelectorAll('span');
-        if (mobileMenu.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        // Transform hamburger to X
+        const line1 = document.getElementById('menu-line-1');
+        const line2 = document.getElementById('menu-line-2');
+        const line3 = document.getElementById('menu-line-3');
+        
+        if (isActive) {
+            line1.style.transform = 'rotate(45deg) translateY(8px)';
+            line2.style.opacity = '0';
+            line3.style.transform = 'rotate(-45deg) translateY(-8px)';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         } else {
-            spans[0].style.transform = 'rotate(0deg) translate(0, 0)';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'rotate(0deg) translate(0, 0)';
+            line1.style.transform = 'rotate(0deg) translateY(0)';
+            line2.style.opacity = '1';
+            line3.style.transform = 'rotate(0deg) translateY(0)';
+            document.body.style.overflow = 'auto';
         }
-    });
-    
-    // Close mobile menu when clicking links
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
+    }
+
+    // Event listeners
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    mobileMenuClose.addEventListener('click', toggleMobileMenu);
+    mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
-            const spans = mobileMenuBtn.querySelectorAll('span');
-            spans[0].style.transform = 'rotate(0deg) translate(0, 0)';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'rotate(0deg) translate(0, 0)';
+            // Reset hamburger icon
+            const line1 = document.getElementById('menu-line-1');
+            const line2 = document.getElementById('menu-line-2');
+            const line3 = document.getElementById('menu-line-3');
+            line1.style.transform = 'rotate(0deg) translateY(0)';
+            line2.style.opacity = '1';
+            line3.style.transform = 'rotate(0deg) translateY(0)';
+            document.body.style.overflow = 'auto';
         });
+    });
+
+    // Close on outside click
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            toggleMobileMenu();
+        }
     });
 }
 

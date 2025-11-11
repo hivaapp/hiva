@@ -174,6 +174,25 @@
             transform: translateX(0);
         }
         
+        /* Prevent layout shift from typed text */
+        .hero-title {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #typed-text {
+            display: inline-block;
+            width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                min-height: 180px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -204,24 +223,31 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2">
+                <button id="mobile-menu-btn" class="md:hidden p-2 relative z-50">
                     <div class="w-6 h-6 flex flex-col justify-center items-center">
-                        <span class="w-4 h-0.5 bg-current transition-all duration-300"></span>
-                        <span class="w-4 h-0.5 bg-current transition-all duration-300 mt-1"></span>
-                        <span class="w-4 h-0.5 bg-current transition-all duration-300 mt-1"></span>
+                        <span class="w-5 h-0.5 bg-current transition-all duration-300 origin-center" id="menu-line-1"></span>
+                        <span class="w-5 h-0.5 bg-current transition-all duration-300 mt-1.5 origin-center" id="menu-line-2"></span>
+                        <span class="w-5 h-0.5 bg-current transition-all duration-300 mt-1.5 origin-center" id="menu-line-3"></span>
                     </div>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-screen bg-white dark:bg-midnight md:hidden">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#features" class="text-2xl hover:text-coral transition-colors">Features</a>
-                <a href="#science" class="text-2xl hover:text-coral transition-colors">Science</a>
-                <a href="#testimonials" class="text-2xl hover:text-coral transition-colors">Testimonials</a>
-                <a href="#faq" class="text-2xl hover:text-coral transition-colors">FAQ</a>
-                <a href="#download" class="btn-primary text-white px-8 py-3 rounded-full text-xl">Download</a>
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-screen bg-midnight md:hidden z-40">
+            <!-- Close button -->
+            <button id="mobile-menu-close" class="absolute top-6 right-6 p-2 text-white z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div class="flex flex-col items-center justify-center h-full space-y-8 px-6">
+                <a href="#features" class="text-2xl hover:text-coral transition-colors mobile-link">Features</a>
+                <a href="#science" class="text-2xl hover:text-coral transition-colors mobile-link">Science</a>
+                <a href="#testimonials" class="text-2xl hover:text-coral transition-colors mobile-link">Testimonials</a>
+                <a href="#faq" class="text-2xl hover:text-coral transition-colors mobile-link">FAQ</a>
+                <a href="#download" class="btn-primary text-white px-8 py-3 rounded-full text-xl mobile-link">Download</a>
             </div>
         </div>
     </nav>
@@ -232,7 +258,7 @@
         
         <div class="hero-content container mx-auto px-6 text-center text-white pt-20">
             <h1 class="hero-title text-5xl md:text-7xl font-display font-bold mb-6 reveal">
-                <span id="typed-text"></span>
+                <span id="typed-text" class="inline-block leading-tight"></span>
             </h1>
             
             <p class="hero-subtitle text-xl md:text-2xl mb-8 max-w-3xl mx-auto reveal stagger">
@@ -240,7 +266,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 reveal stagger">
-                <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold">
+                <button onclick="openVisualizationModal()" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold">
                     Try Visualization Free
                 </button>
                 <div class="flex gap-4">

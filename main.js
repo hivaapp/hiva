@@ -14,20 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // Initialize Typed.js for hero text
 function initializeAnimations() {
     // Hero text typing animation
-    const typed = new Typed('#typed-text', {
-        strings: [
-            'Visualize Your Success',
-            'Achieve Your Goals',
-            'Transform Your Life',
-            'Unlock Your Potential'
-        ],
-        typeSpeed: 80,
-        backSpeed: 50,
-        backDelay: 2000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|'
-    });
+    if (document.getElementById('typed-text')) {
+        const typed = new Typed('#typed-text', {
+            strings: [
+                'Visualize Your Success',
+                'Achieve Your Goals',
+                'Transform Your Life',
+                'Unlock Your Potential'
+            ],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
 
     // Animate elements on load
     anime({
@@ -76,24 +78,26 @@ function initializeScrollReveal() {
 
 // Initialize testimonial slider
 function initializeTestimonialSlider() {
-    const splide = new Splide('#testimonial-slider', {
-        type: 'loop',
-        perPage: 1,
-        perMove: 1,
-        gap: '2rem',
-        autoplay: true,
-        interval: 5000,
-        pauseOnHover: true,
-        arrows: true,
-        pagination: true,
-        breakpoints: {
-            768: {
-                arrows: false,
+    if (document.querySelector('#testimonial-slider')) {
+        const splide = new Splide('#testimonial-slider', {
+            type: 'loop',
+            perPage: 1,
+            perMove: 1,
+            gap: '2rem',
+            autoplay: true,
+            interval: 5000,
+            pauseOnHover: true,
+            arrows: true,
+            pagination: true,
+            breakpoints: {
+                768: {
+                    arrows: false,
+                }
             }
-        }
-    });
-    
-    splide.mount();
+        });
+
+        splide.mount();
+    }
 }
 
 // FAQ functionality

@@ -249,6 +249,30 @@ img {
     width: auto;
 }
 
+/* Ensure header items fit on mobile */
+.header-container {
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+
+    /* Scale down logo slightly on mobile to make room */
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    /* Make download button smaller on mobile main header */
+    .header .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
 .nav-desktop {
     display: none;
 }

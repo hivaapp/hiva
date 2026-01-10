@@ -240,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const allOptions = optionsContainer.children;
         for (let i = 0; i < allOptions.length; i++) {
             allOptions[i].classList.remove('selected');
+            allOptions[i].style.pointerEvents = 'none'; // Disable clicks
             const icon = allOptions[i].querySelector('i');
             icon.className = 'far fa-circle';
             icon.style.color = 'var(--color-text-muted)';
@@ -252,6 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedIcon.style.color = 'var(--color-primary)';
 
         nextBtn.disabled = false;
+
+        // Auto-advance after 500ms
+        setTimeout(() => {
+            nextQuestion();
+        }, 500);
     }
 
     function nextQuestion() {

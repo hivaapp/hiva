@@ -384,3 +384,87 @@ img {
 
     /* More specific layout adjustments */
 }
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-xl: 4rem;
+        --header-height: 70px;
+    }
+
+    h1 {
+        font-size: 2.25rem !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+    }
+
+    .blob-1,
+    .blob-2 {
+        width: 300px;
+        height: 300px;
+        opacity: 0.2;
+    }
+
+    /* Quiz Mobile Adjustments */
+    .quiz-card {
+        padding: 1.5rem;
+    }
+
+    .method-title {
+        font-size: 2rem;
+    }
+
+    .step-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Filter buttons on methods page */
+    .flex-center {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        flex: 1 1 auto;
+        /* Allow wrap */
+    }
+
+    /* Support Form */
+    textarea,
+    input,
+    select {
+        padding: 0.8rem !important;
+    }
+}

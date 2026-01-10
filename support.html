@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiva Support - We're Here to Help</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Hiva Logo">
+                Hiva
+            </a>
+
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#manifestation">Manifestation Tools</a></li>
+                    <li><a href="index.html#science">Science</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html#download" class="btn btn-primary"
+                style="display: none; @media(min-width: 768px){display:inline-flex;}">Download App</a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#science">Science</a></li>
+            <li><a href="support.html" class="active">Support</a></li>
+            <li><a href="index.html#download" class="btn btn-primary" style="width: 100%;">Download App</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Support Header -->
+        <section class="section" style="padding-top: 150px; padding-bottom: 50px;">
+            <div class="container text-center">
+                <h1 class="fade-in">Hiva Support & <span class="text-gradient">Help Center</span></h1>
+                <p class="fade-in" style="font-size: 1.2rem;">Everything you need to get the most out of your audio
+                    sessions.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section">
+            <div class="container" style="max-width: 600px;">
+                <div class="card fade-in" style="animation-delay: 0.2s;">
+                    <h2 class="text-center" style="margin-bottom: 2rem;">Contact Us</h2>
+
+                    <form id="support-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Name</label>
+                            <input type="text" id="name" required
+                                style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 8px; color: white; outline: none;">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Email</label>
+                            <input type="email" id="email" required
+                                style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 8px; color: white; outline: none;">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Issue
+                                Type</label>
+                            <select id="issue-type"
+                                style="width: 100%; padding: 1rem; background: #0a0a0f; border: 1px solid var(--color-border); border-radius: 8px; color: white; outline: none;">
+                                <option>Feedback</option>
+                                <option>Bug Report</option>
+                                <option>Feature Request</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Message</label>
+                            <textarea id="message" rows="5" required
+                                style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 8px; color: white; outline: none;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <p style="font-size: 0.9rem;">Or email us directly at <a
+                                href="mailto:ican.aivisualisation@gmail.com"
+                                class="text-highlight">ican.aivisualisation@gmail.com</a></p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">"We are a user-first team. We
+                            read every message."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Full List for Support Page -->
+        <section class="section">
+            <div class="container" style="max-width: 800px;">
+                <h2 class="text-center" style="margin-bottom: 3rem;">Common Questions</h2>
+
+                <div class="accordion">
+                    <!-- General Questions -->
+                    <h3 style="margin-top: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                        General Questions</h3>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>Why does my personality type matter for visualization?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Not all brains work the same way. A "Perfectionist" might need structured, logical audio
+                                cues to relax, while a "Dreamer" might respond better to open-ended, sensory-rich
+                                storytelling. Hiva uses your personality profile to select the specific tone, pace, and
+                                language that your subconscious is most likely to accept, rather than resist.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>How is Hiva different from other meditation apps?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Most apps offer generic meditation for relaxation. Hiva is different—we focus on active
+                                goal achievement. We use a proprietary algorithm to curate specific audio sessions based
+                                on your personality type and your specific goals (like career growth, confidence, or
+                                relationships). We don't just help you relax; we help you rewire your brain for success.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>Do I need prior experience with manifestation or visualization?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Not at all! That is exactly why we built Hiva. Many people struggle to practice these
+                                techniques on their own. Our guided audio sessions do the heavy lifting for you. You
+                                just need to press play, and our expert guides will walk you through every step of the
+                                process.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- The Techniques -->
+                    <h3 style="margin-top: 3rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                        The Techniques</h3>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>What if my goal is extremely specific?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Hiva doesn't just offer generic categories. Our engine generates a specific visualization
+                                for your exact scenario. Whether you want to visualize winning a specific sports
+                                tournament, buying a particular house, or nailing a difficult conversation, the app
+                                creates the audio journey tailored to that precise moment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>Can I change my visualization scenario daily?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Absolutely. You might need confidence for a date on Friday and focus for an exam on
+                                Monday. Hiva adapts instantly. You can generate a new session for every new challenge
+                                life throws at you.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- App & Usage -->
+                    <h3 style="margin-top: 3rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                        App & Usage</h3>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>Do I need to use headphones?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>While not strictly required, we highly recommend using headphones. This creates an
+                                immersive experience that helps block out external distractions and allows the audio
+                                cues to have a stronger impact on your focus.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <button class="faq-question"
+                            style="background: none; border: none; color: white; font-size: 1.1rem; width: 100%; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span>Is my data private?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 1rem; color: var(--color-text-muted);">
+                            <p>Your privacy is our top priority. The goals you set and the personality data you provide
+                                are used strictly to personalize your audio experience. We do not sell your personal
+                                data to third parties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #050508; padding: 3rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container text-center">
+            <div class="logo flex-center" style="margin-bottom: 1rem;">
+                <img src="assets/images/logo.png" alt="Hiva Logo" style="height: 30px;">
+                Hiva
+            </div>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #555;">&copy; 2024 Hiva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

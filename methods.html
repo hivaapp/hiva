@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Manifestation Methods - Hiva</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .method-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--color-primary);
+        }
+
+        .method-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .method-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-family: var(--font-heading);
+        }
+
+        .method-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .method-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--color-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Hiva Logo">
+                Hiva
+            </a>
+
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="quiz.html" style="color: var(--color-primary);">Find Your Method</a></li>
+                    <li><a href="methods.html" class="active">All Methods</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html#download" class="btn btn-primary"
+                style="display: none; @media(min-width: 768px){display:inline-flex;}">Download App</a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html" style="color: var(--color-primary);">Find Your Method</a></li>
+            <li><a href="methods.html" class="active">All Methods</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="index.html#download" class="btn btn-primary" style="width: 100%;">Download App</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="section" style="padding-top: 150px;">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3rem auto;">
+                    <h1 class="fade-in">Manifestation <span class="text-gradient">Library</span></h1>
+                    <p class="fade-in" style="font-size: 1.2rem;">Explore our comprehensive collection of
+                        neuroscience-backed visualization techniques.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex-center fade-in" style="margin-bottom: 3rem; flex-wrap: wrap;">
+                    <button class="filter-btn active" onclick="filterMethods('all')">All</button>
+                    <button class="filter-btn" onclick="filterMethods('writing')">Writing</button>
+                    <button class="filter-btn" onclick="filterMethods('visualization')">Visualization</button>
+                    <button class="filter-btn" onclick="filterMethods('sleep')">Sleep</button>
+                    <button class="filter-btn" onclick="filterMethods('healing')">Healing</button>
+                    <button class="filter-btn" onclick="filterMethods('process')">Process/Ritual</button>
+                </div>
+
+                <!-- Methods Grid -->
+                <div class="grid-3" id="methods-grid">
+
+                    <!-- Writing Methods -->
+                    <div class="method-card scroll-reveal" data-category="writing">
+                        <span class="method-category">Writing</span>
+                        <h3 class="method-title">Morning Affirmations</h3>
+                        <p class="method-desc">A simple yet effective practice of reprogramming your subconscious with
+                            positive statements immediately upon waking when your brain waves are primed.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">5 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="writing">
+                        <span class="method-category">Writing</span>
+                        <h3 class="method-title">The 369 Method</h3>
+                        <p class="method-desc">A Tesla-inspired scripting technique. Write your intention 3 times in the
+                            morning, 6 times in the afternoon, and 9 times at night to amplify focus.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Intermediate</span>
+                            <span class="method-tag">15 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="writing">
+                        <span class="method-category">Writing</span>
+                        <h3 class="method-title">The 55×5 Method</h3>
+                        <p class="method-desc">An intense reprogramming practice. Write your exact affirmation 55 times
+                            in one sitting for 5 consecutive days to break through stubborn blocks.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Advanced</span>
+                            <span class="method-tag">20 Mins</span>
+                        </div>
+                    </div>
+
+                    <!-- Healing Methods -->
+                    <div class="method-card scroll-reveal" data-category="healing">
+                        <span class="method-category">Healing</span>
+                        <h3 class="method-title">Ho’oponopono</h3>
+                        <p class="method-desc">An ancient Hawaiian practice of forgiveness to cleanse inner conflict.
+                            "I'm sorry. Please forgive me. Thank you. I love you."</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">Anytime</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="healing">
+                        <span class="method-category">Healing</span>
+                        <h3 class="method-title">EFT Tapping</h3>
+                        <p class="method-desc">Emotional Freedom Technique involves tapping on specific meridian points
+                            while voicing fears to release energy blocks and reduce anxiety.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Intermediate</span>
+                            <span class="method-tag">10 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="healing">
+                        <span class="method-category">Healing</span>
+                        <h3 class="method-title">Mirror Work</h3>
+                        <p class="method-desc">Staring into your own eyes to heal the relationship with yourself. A
+                            powerful way to boost self-worth and dissolve shame.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">5 Mins</span>
+                        </div>
+                    </div>
+
+                    <!-- Sleep/Vis Methods -->
+                    <div class="method-card scroll-reveal" data-category="sleep">
+                        <span class="method-category">Sleep</span>
+                        <h3 class="method-title">The Pillow Method</h3>
+                        <p class="method-desc">Write your intention on paper and place it under your pillow. Allows your
+                            intention to seep into your subconscious as you sleep.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">Overnight</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="visualization">
+                        <span class="method-category">Visualization</span>
+                        <h3 class="method-title">SATS (State Akin To Sleep)</h3>
+                        <p class="method-desc">A Neville Goddard technique performed in the drowsy state just before
+                            sleep. Loop a short scene of your wish fulfilled until you drift off.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Advanced</span>
+                            <span class="method-tag">Nightly</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="visualization">
+                        <span class="method-category">Visualization</span>
+                        <h3 class="method-title">Multi-Sensory Visualization</h3>
+                        <p class="method-desc">Creating a vivid mental movie of your goal in the first person, engaging
+                            sight, sound, touch, and emotion to prime the brain.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">10 Mins</span>
+                        </div>
+                    </div>
+
+                    <!-- Process/Ritual -->
+                    <div class="method-card scroll-reveal" data-category="process">
+                        <span class="method-category">Process</span>
+                        <h3 class="method-title">The Placemat Process</h3>
+                        <p class="method-desc">Surrender the "how" to the Universe. List "My Job" (actions you can take)
+                            vs "Universe's Job" (outcomes you can't control).</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Beginner</span>
+                            <span class="method-tag">Planning</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="process">
+                        <span class="method-category">Process</span>
+                        <h3 class="method-title">The Focus Wheel</h3>
+                        <p class="method-desc">Start with a goal in the center and write supporting positive beliefs
+                            around it to shift your vibration from doubt to confidence.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Intermediate</span>
+                            <span class="method-tag">15 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="process">
+                        <span class="method-category">Ritual</span>
+                        <h3 class="method-title">Bay Leaf Method</h3>
+                        <p class="method-desc">Write your wish on a dry bay leaf and burn it to release the intention to
+                            the Universe. A tangible ritual for letting go.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Ritual</span>
+                            <span class="method-tag">5 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="process">
+                        <span class="method-category">Ritual</span>
+                        <h3 class="method-title">Two Cup Method</h3>
+                        <p class="method-desc">Pour water from a cup labeled "Current Reality" to one labeled "Desired
+                            Reality", then drink it to physically integrate the shift.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Quantum Jump</span>
+                            <span class="method-tag">5 Mins</span>
+                        </div>
+                    </div>
+
+                    <div class="method-card scroll-reveal" data-category="visualization">
+                        <span class="method-category">Behavior</span>
+                        <h3 class="method-title">Act As If</h3>
+                        <p class="method-desc">Embodying the version of you who already has the goal. Making decisions,
+                            dressing, and acting from that future perspective today.</p>
+                        <div style="margin-top: auto;">
+                            <span class="method-tag">Lifestyle</span>
+                            <span class="method-tag">All Day</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center" style="margin-top: 4rem;">
+                    <p style="margin-bottom: 2rem;">Not sure which one to start with?</p>
+                    <a href="quiz.html" class="btn btn-primary">Take the Method Quiz</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #050508; padding: 3rem 0; border-top: 1px solid var(--color-border);">
+        <div class="container text-center">
+            <div class="logo flex-center" style="margin-bottom: 1rem;">
+                <img src="assets/images/logo.png" alt="Hiva Logo" style="height: 30px;">
+                Hiva
+            </div>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="index.html">Home</a>
+                <a href="methods.html">All Methods</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #555;">&copy; 2024 Hiva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function filterMethods(category) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter grid
+            const cards = document.querySelectorAll('.method-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    card.style.flexDirection = 'column'; // Maintain flex layout
+                    // Reset animation trigger roughly
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
